@@ -20,7 +20,13 @@ namespace ConsoleApp1YTRecap
         // EventHandler is a built-in delegate: (object sender, EventArgs e) → void
         // The 'event' keyword means: only THIS class can fire it,
         // but anyone outside can subscribe/unsubscribe with += / -=
-        public event EventHandler OnSpacePressed;
+        //public event EventHandler OnSpacePressed;
+        // EventHandler<T> is the modern built-in generic delegate.
+        // T = your custom EventArgs type. Subscriber MUST match this signature.
+        public event EventHandler<SpacePressedEventArgs> OnSpacePressed;
+
+        // Random number generator to simulate a float value per press
+        private Random _rng = new Random();
 
         // Tracks how many times spacebar was pressed.
         // Private: only this class can read/modify it.
@@ -73,7 +79,11 @@ namespace ConsoleApp1YTRecap
                     // Fire the event — equivalent of Unity's OnSpacePressed?.Invoke(this, EventArgs.Empty)
                     // ?. means: only call Invoke if at least one handler is subscribed
                     // Without ?. this would crash with NullReferenceException if nobody subscribed
-                    OnSpacePressed?.Invoke(this, EventArgs.Empty);
+                    // Generate a random float between 0.0 and 1.0
+                    float intensity = (float)_rng.NextDouble();
+                    // Pack the float into the custom EventArgs and fire
+                    OnSpacePressed?.Invoke(this, new SpacePressedEventArgs(intensity));
+        
                 }
                 else if (key.Key == ConsoleKey.Escape)
                 {

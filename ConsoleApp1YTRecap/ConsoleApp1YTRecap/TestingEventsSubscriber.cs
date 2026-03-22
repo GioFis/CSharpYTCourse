@@ -1,39 +1,41 @@
 ﻿using System;
-
-
+using System.Collections.Generic; // ← ADD THIS (List<T> lives here)
+using System.Xml;
 namespace ConsoleApp1YTRecap
 {
     class TestingEventsSubscriber
     {
-        //Private copies counter and timestamps
-        //They belong to the subscriber now, not the publisher
-        //The publisher just fire the bell
         private int _spaceCount = 0;
         private List<DateTime> _pressTimes = new List<DateTime>();
+        private List<float> _intensities = new List<float>(); // ← was: NewLineHandling List<float>()
 
-        //Constrcture receive the publisher and immediately subscribes
-        //publisher is just a local name for the TestingEvent instance.
         public TestingEventsSubscriber(TestingEvents publisher)
         {
-            //Wire up : when publisher fires OnSpacePressed call our handler
             publisher.OnSpacePressed += OnSpacePressed;
+            publisher.OnSpacePressed += OnSpacePressedLogger;
         }
 
-        // The handler — signature must still match EventHandler: (object, EventArgs) → void
-        private void OnSpacePressed(object sender, EventArgs e)
+        // ← was: (object, sender, ...) — the comma made 'sender' a second type parameter
+        private void OnSpacePressed(object sender, SpacePressedEventArgs e)
         {
             _spaceCount++;
             _pressTimes.Add(DateTime.Now);
-            Console.WriteLine($"  [Subscriber] Space pressed! Count: {_spaceCount} — at {DateTime.Now:HH:mm:ss.fff}");
+            _intensities.Add(e.Intensity);
+            Console.WriteLine($"  [Subscriber] Space pressed! Count: {_spaceCount} | intensity: {e.Intensity:F3} | at {DateTime.Now:HH:mm:ss.fff}");
+        } // ← ADD closing brace for OnSpacePressed — it was missing
+
+        // ← was: nested INSIDE OnSpacePressed (private method inside a method is illegal in C#)
+        private void OnSpacePressedLogger(object sender, SpacePressedEventArgs e)
+        {
+            Console.WriteLine($"  [Logger]     Intensity {e.Intensity:F3} logged.");
         }
 
-        // Called by Run() after the loop ends to print the summary
         public void PrintSummary()
         {
             Console.WriteLine($"  You pressed SPACE {_spaceCount} time(s) in total.");
             Console.WriteLine("  Timestamps:");
-            foreach (DateTime t in _pressTimes)
-                Console.WriteLine($"    → {t:HH:mm:ss.fff}");
+            for (int i = 0; i < _pressTimes.Count; i++) // ← was: foreach (no 'i' available in foreach)
+                Console.WriteLine($"    → {_pressTimes[i]:HH:mm:ss.fff} , intensity: {_intensities[i]:F3}");
         }
-     }
+    }
 }
