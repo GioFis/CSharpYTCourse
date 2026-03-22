@@ -38,7 +38,7 @@ namespace ConsoleApp1YTRecap
         {
             // Subscribe: when OnSpacePressed fires, call Testing_OnSpacePressed
             // += means "add this method to the list of listeners"
-            OnSpacePressed += Testing_OnSpacePressed;
+            //Now in the subscriber TesingEventsSubscriber.cs OnSpacePressed += Testing_OnSpacePressed;
         }
 
         // ── EVENT HANDLER ─────────────────────────────────────────────────
@@ -46,14 +46,14 @@ namespace ConsoleApp1YTRecap
         //   (object sender, EventArgs e) → void
         // 'sender' = the object that fired the event (the TestingEvents instance)
         // 'e'      = any extra data sent with the event (empty here)
-        private void Testing_OnSpacePressed(object sender, EventArgs e)
-        {
-            _spaceCount++;  // increment the counter every time this handler is called
-            _pressTimes.Add(DateTime.Now);  // capture exact time of this press
+        //private void Testing_OnSpacePressed(object sender, EventArgs e)
+        //{
+        //    _spaceCount++;  // increment the counter every time this handler is called
+        //    _pressTimes.Add(DateTime.Now);  // capture exact time of this press
 
-            Console.WriteLine($"  [Event fired] Space pressed! Total count: {_spaceCount}");
-            Console.WriteLine($"  [Event fired] Space pressed! Count: {_spaceCount} — at {DateTime.Now:HH:mm:ss.fff}");
-        }
+        //    Console.WriteLine($"  [Event fired] Space pressed! Total count: {_spaceCount}");
+        //    Console.WriteLine($"  [Event fired] Space pressed! Count: {_spaceCount} — at {DateTime.Now:HH:mm:ss.fff}");
+        //}
 
         // ── EQUIVALENT OF Unity's Update() ───────────────────────────────
         // In Unity, Update() runs every single frame automatically.
@@ -78,10 +78,6 @@ namespace ConsoleApp1YTRecap
                 else if (key.Key == ConsoleKey.Escape)
                 {
                     Console.WriteLine($"  [Escape pressed — exiting loop]");
-                    Console.WriteLine($"  You pressed SPACE {_spaceCount} time(s) in total.");
-                    Console.WriteLine("Timestamps: ");
-                    foreach (DateTime t in _pressTimes)
-                        Console.WriteLine($"  {t:HH:mm:ss.fff}");
                     break;
                 }
             }
@@ -97,9 +93,10 @@ namespace ConsoleApp1YTRecap
             // it belongs to each individual object, not the class itself.
             // (Unity does this for you behind the scenes with MonoBehaviour)
             TestingEvents demo = new TestingEvents();
-
-            demo.Setup();       // subscribe handlers — like Unity's Start()
+            TestingEventsSubscriber subscriber = new TestingEventsSubscriber(demo);  // create a subscriber and pass the publisher to its constructor
+            //demo.Setup();       // subscribe handlers — like Unity's Start()
             demo.UpdateLoop();  // run the input loop — like Unity's Update()
+            subscriber.PrintSummary(); // print the summary of spacebar presses after exiting the loop, now lives in the subscriber
         }
     }
 }
