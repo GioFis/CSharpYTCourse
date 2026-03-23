@@ -20,7 +20,8 @@ namespace ConsoleApp1YTRecap
             Console.WriteLine("  2 - EP.2  Arrays, Loops, Enum, Switch");
             Console.WriteLine("  3 - EP.3  Events & Delegates");
             Console.WriteLine("  4 - EP.4  Testing Events (Unity MonoBehaviour)");
-            Console.Write("\nEnter 1, 2 or 3: ");
+            Console.WriteLine("  5 - EP.5  VideoEncoderDelegates");
+            Console.Write("\nEnter 1, 2, 3, 4 or 5: ");
 
             string choice = Console.ReadLine();
             Console.WriteLine();
@@ -31,6 +32,7 @@ namespace ConsoleApp1YTRecap
                 case "2": CollectionsDemo.Run(); break;
                 case "3": EventsDemo.Run(); break;
                 case "4": TestingEvents.Run(); break;
+                case "5": VideoEncoder.Run(); break;
                 default:
                     Console.WriteLine("Invalid choice. Restart and enter 1, 2 or 3.");
                     break;
