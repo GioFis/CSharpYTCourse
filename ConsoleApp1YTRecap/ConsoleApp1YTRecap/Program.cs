@@ -15,11 +15,14 @@ namespace ConsoleApp1YTRecap
         static void Main(string[] args)
         {
             Console.WriteLine("=== TryPlay1 — C# Learning Project ===\n");
+            bool running = true;
+            while (running)
+            { 
             Console.WriteLine("Pick a demo:");
             Console.WriteLine("  1 - EP.1  Basics (types, operators, methods)");
             Console.WriteLine("  2 - EP.2  Arrays, Loops, Enum, Switch");
             Console.WriteLine("  3 - EP.3  Events & Delegates");
-            Console.WriteLine("  4 - EP.4  Testing Events (Unity MonoBehaviour)");
+            Console.WriteLine("  4 - EP.4  Testing Events ");
             Console.WriteLine("  5 - EP.5  VideoEncoderDelegates");
             Console.Write("\nEnter 1, 2, 3, 4 or 5: ");
 
@@ -33,13 +36,26 @@ namespace ConsoleApp1YTRecap
                 case "3": EventsDemo.Run(); break;
                 case "4": TestingEvents.Run(); break;
                 case "5": VideoEncoder.Run(); break;
+                case "Q":
+                    running = false;
+                    Console.WriteLine("Exiting the program. Goodbye!");
+                    continue;
                 default:
-                    Console.WriteLine("Invalid choice. Restart and enter 1, 2 or 3.");
+                    Console.WriteLine("Invalid choice. Restart and enter 1-5 or Q to quit.");
                     break;
             }
-
-            Console.WriteLine("\nPress any key to exit...");
-            Console.ReadKey();
+            if (running)
+            {
+                Console.WriteLine("\n Return to menu? (Y/N) ");
+                string again = Console.ReadLine();
+                if (again?.ToUpper() != "Y")
+                {
+                    running = false;
+                    Console.WriteLine("Goodbye!");
+                }
+                Console.WriteLine();
+            }
+            }
         }
     }
 }
