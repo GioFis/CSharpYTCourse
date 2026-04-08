@@ -24,6 +24,7 @@ namespace ConsoleApp1YTRecap
             Console.WriteLine("  3 - EP.3  Events & Delegates");
             Console.WriteLine("  4 - EP.4  Testing Events ");
             Console.WriteLine("  5 - EP.5  VideoEncoderDelegates");
+            Console.WriteLine("  6 - EP.6  Interfaces (IAttackable)");
             Console.Write("\nEnter 1, 2, 3, 4 or 5: ");
 
             string choice = Console.ReadLine();
@@ -36,12 +37,13 @@ namespace ConsoleApp1YTRecap
                 case "3": EventsDemo.Run(); break;
                 case "4": TestingEvents.Run(); break;
                 case "5": VideoEncoder.Run(); break;
+                case "6": TryInterface.Run(); break;
                 case "Q":
                     running = false;
                     Console.WriteLine("Exiting the program. Goodbye!");
                     continue;
                 default:
-                    Console.WriteLine("Invalid choice. Restart and enter 1-5 or Q to quit.");
+                    Console.WriteLine("Invalid choice. Restart and enter 1-6 or Q to quit.");
                     break;
             }
             if (running)
