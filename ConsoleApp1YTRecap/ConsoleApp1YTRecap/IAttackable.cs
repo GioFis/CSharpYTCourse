@@ -71,7 +71,7 @@ namespace TryPlay1
     public class TreasureChest : IAttackable
     {
         public string Name { get; }
-        public int Health { get; private set; }   // "durability"
+        public int Health { get; private set; }   // "property durability"
 
         public TreasureChest(string name)
         {

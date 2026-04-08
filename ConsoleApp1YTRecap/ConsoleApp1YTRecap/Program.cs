@@ -4,6 +4,9 @@
 //  All logic lives in separate files in the same namespace.
 //  C# compiles every .cs file in the project automatically —
 //  no imports needed, just the same namespace is enough.
+//Is it "something happened and others need to know"? → Event.
+//Is it "I need to treat different objects the same way based on what they can do"? → Interface.
+//Is it "I'm writing logic that doesn't care about the specific type"? → Generic.
 // ============================================================
 
 using TryPlay1;
@@ -24,8 +27,9 @@ namespace ConsoleApp1YTRecap
             Console.WriteLine("  3 - EP.3  Events & Delegates");
             Console.WriteLine("  4 - EP.4  Testing Events ");
             Console.WriteLine("  5 - EP.5  VideoEncoderDelegates");
-            Console.WriteLine("  6 - EP.6  Interfaces (IAttackable)");
-            Console.Write("\nEnter 1, 2, 3, 4 or 5: ");
+            Console.WriteLine("  6 - EP.6  Interfaces (IAttackable and TryInterFace)");
+            Console.WriteLine("  7 - EP.7  Generics (GenericInventory Inventory<T> and TryGenerics)");
+            Console.Write("\nEnter 1, 2, 3, 4, 5, 6, 7: or Q to quit");
 
             string choice = Console.ReadLine();
             Console.WriteLine();
@@ -38,6 +42,7 @@ namespace ConsoleApp1YTRecap
                 case "4": TestingEvents.Run(); break;
                 case "5": VideoEncoder.Run(); break;
                 case "6": TryInterface.Run(); break;
+                case "7": TryGenerics.Run(); break;
                 case "Q":
                     running = false;
                     Console.WriteLine("Exiting the program. Goodbye!");
