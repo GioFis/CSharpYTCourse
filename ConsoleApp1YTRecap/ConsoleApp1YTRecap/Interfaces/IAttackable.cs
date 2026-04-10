@@ -12,7 +12,7 @@
 //  Hero, Monster, Chest, Tower — things with NOTHING else in common.
 // ============================================================
 
-namespace TryPlay1
+namespace ConsoleApp1YTRecap.Interfaces
 {
     // ── THE CONTRACT ──────────────────────────────────────────────────────────
     // Any class that implements IAttackable MUST provide these two members.

@@ -1,6 +1,6 @@
 ﻿using System;
 
- namespace ConsoleApp1YTRecap
+ namespace ConsoleApp1YTRecap.Events
  {
      // Custom EventArgs: subclass EventArgs to attach your own payload.
      // Naming convention: always end with "EventArgs".

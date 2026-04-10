@@ -8,7 +8,7 @@
 //   5. Bonus: is / as casting
 // ============================================================
 
-namespace TryPlay1
+namespace ConsoleApp1YTRecap.Interfaces
 {
     public static class TryInterface
     {

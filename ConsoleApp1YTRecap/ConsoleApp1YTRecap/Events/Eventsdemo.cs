@@ -17,7 +17,7 @@
 
 using System;
 
-namespace ConsoleApp1YTRecap
+namespace ConsoleApp1YTRecap.Events
 {
     // ── STEP 1: DECLARE THE DELEGATE ─────────────────────────────────────────
     // A delegate is a TYPE that describes what a method must look like.

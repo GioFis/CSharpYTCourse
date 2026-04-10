@@ -9,8 +9,11 @@
 //Is it "I'm writing logic that doesn't care about the specific type"? → Generic.
 // ============================================================
 
-using TryPlay1;
-
+using ConsoleApp1YTRecap.Basics;
+using ConsoleApp1YTRecap.Events;
+using ConsoleApp1YTRecap.Generics;
+using ConsoleApp1YTRecap.Interfaces;
+using ConsoleApp1YTRecap.Videos;
 namespace ConsoleApp1YTRecap
 {
     class Program

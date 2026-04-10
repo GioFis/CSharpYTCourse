@@ -6,7 +6,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace ConsoleApp1YTRecap
+namespace ConsoleApp1YTRecap.Basics
 {
     enum PlayerState { Attack, Defend }   // namespace-level type
 

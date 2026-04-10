@@ -1,6 +1,7 @@
 ﻿using System;
+using ConsoleApp1YTRecap.Videos;
 
-namespace ConsoleApp1YTRecap
+namespace ConsoleApp1YTRecap.Events
 {
     // Subscriber: reacts to VideoEncoded event by sending an email
     public class MailService

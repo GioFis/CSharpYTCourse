@@ -1,4 +1,4 @@
-﻿namespace ConsoleApp1YTRecap
+﻿namespace ConsoleApp1YTRecap.Videos
 {
     public class Video
     {

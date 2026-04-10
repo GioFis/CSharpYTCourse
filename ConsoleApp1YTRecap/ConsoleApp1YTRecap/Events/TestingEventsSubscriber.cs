@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic; // ← ADD THIS (List<T> lives here)
 using System.Xml;
-namespace ConsoleApp1YTRecap
+namespace ConsoleApp1YTRecap.Events
 {
     class TestingEventsSubscriber
     {

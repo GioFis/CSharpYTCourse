@@ -4,7 +4,7 @@
 //  No import needed.
 // ============================================================
 
-namespace TryPlay1
+namespace ConsoleApp1YTRecap.Basics
 {
     class BasicsDemo
     {

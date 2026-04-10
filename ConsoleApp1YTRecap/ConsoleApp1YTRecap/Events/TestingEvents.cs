@@ -12,7 +12,7 @@
 //    using UnityEngine    →  removed (doesn't exist here)
 // ============================================================
 
-namespace ConsoleApp1YTRecap
+namespace ConsoleApp1YTRecap.Events
 {
     class TestingEvents
     {

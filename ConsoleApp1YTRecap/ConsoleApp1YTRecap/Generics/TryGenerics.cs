@@ -10,7 +10,7 @@
 //   6. Built-in generics  — List<T>, Dictionary<TKey,TValue>
 // ============================================================
 
-namespace TryPlay1
+namespace ConsoleApp1YTRecap.Generics
 {
     public static class TryGenerics
     {
@@ -139,14 +139,14 @@ namespace TryPlay1
 
             // BattleSlot<Hero> — T = Hero, which implements IAttackable ✓
             Console.WriteLine("  BattleSlot<Hero> — valid because Hero : IAttackable");
-            var heroSlot = new BattleSlot<Hero>(new Hero("Lancelot", 60));
+            var heroSlot = new BattleSlot<Interfaces.Hero>(new Interfaces.Hero("Lancelot", 60));
             heroSlot.ApplyDot(damagePerTick: 10, ticks: 4);
 
             Console.WriteLine();
 
             // BattleSlot<Monster> — same slot class, different T
             Console.WriteLine("  BattleSlot<Monster> — same class, T = Monster");
-            var monsterSlot = new BattleSlot<Monster>(new Monster("Orc", 45));
+            var monsterSlot = new BattleSlot<Interfaces.Monster>(new Interfaces.Monster("Orc", 45));
             monsterSlot.ApplyDot(damagePerTick: 15, ticks: 2);
 
             Console.WriteLine();

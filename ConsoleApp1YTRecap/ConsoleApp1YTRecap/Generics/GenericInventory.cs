@@ -23,7 +23,7 @@
 //    where T : ISomething  — constraint: T must honour a contract
 // ============================================================
 
-namespace TryPlay1
+namespace ConsoleApp1YTRecap.Generics
 {
     // ── DOMAIN TYPES — the things we'll put inside the generic inventory ──────
 
@@ -172,7 +172,7 @@ namespace TryPlay1
     //  We reuse IAttackable from EP.6 — anything attackable can go in a
     //  BattleSlot<T> and the slot can read its Health without casting.
 
-    public class BattleSlot<T> where T : IAttackable
+    public class BattleSlot<T> where T : Interfaces.IAttackable
     {
         // Because of the constraint, the compiler KNOWS T has .Health
         // and .TakeDamage() — no casting, no guessing.
