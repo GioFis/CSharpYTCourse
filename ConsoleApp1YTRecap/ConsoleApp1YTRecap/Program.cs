@@ -33,7 +33,8 @@ namespace ConsoleApp1YTRecap
             Console.WriteLine("  6 - EP.6  Interfaces (IAttackable and TryInterFace)");
             Console.WriteLine("  7 - EP.7  Generics (GenericInventory Inventory<T> and TryGenerics)");
             Console.WriteLine("  8 - EP.8  Loops (for, foreach, while, do-while");
-            Console.Write("\nEnter 1, 2, 3, 4, 5, 6, 7, 8: or Q to quit");
+            Console.WriteLine("  9 - EP.9  Null Reference (nullable types, ?., ??, ??=)");
+            Console.Write("\nEnter 1, 2, 3, 4, 5, 6, 7, 8, 9: or Q to quit");
 
             string choice = Console.ReadLine();
             Console.WriteLine();
@@ -48,12 +49,13 @@ namespace ConsoleApp1YTRecap
                 case "6": TryInterface.Run(); break;
                 case "7": TryGenerics.Run(); break;
                 case "8": Loops.Run(); break;
+                case "9": NullReference.Run(); break;
                     case "Q":
                     running = false;
                     Console.WriteLine("Exiting the program. Goodbye!");
                     continue;
                 default:
-                    Console.WriteLine("Invalid choice. Restart and enter 1-8 or Q to quit.");
+                    Console.WriteLine("Invalid choice. Restart and enter 1-9 or Q to quit.");
                     break;
             }
             if (running)

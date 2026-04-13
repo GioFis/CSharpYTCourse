@@ -2,6 +2,19 @@
 //  BasicsDemo.cs  —  EP.1: Types, Operators, Conditionals, Methods
 //  Same namespace = Program.cs can call BasicsDemo.Run() freely.
 //  No import needed.
+// PUBLIC, PRIVATE ACCESS MODIFIERS:
+// public and private are the two most common access modifier keywords in C#.
+// They control the visibility and accessibility of classes, methods, and other members.
+// Here's a brief explanation of each:
+// 1. public: When a class, method, or member is declared as public, it can be accessed from anywhere in the code.
+// This means that any other class or method can use it without any restrictions.
+// 2. private: When a class, method, or member is declared as private, it can only be accessed within the same class.
+// Static methods and members belong to the class itself rather than an instance of the class, so they can be accessed without creating an object of the class.
+// They are often used for utility functions or shared data that doesn't depend on instance state. In this demo, all methods are static for simplicity,
+// allowing us to call them directly from the Run() method without needing to create an instance of BasicsDemo.
+// STATIC VS NON-STATIC METHODS:
+// Non-static methods would require creating an object of the class to call them,
+// which is not necessary for this basic demonstration of C# features.
 // ============================================================
 
 namespace ConsoleApp1YTRecap.Basics
