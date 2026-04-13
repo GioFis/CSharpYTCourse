@@ -32,7 +32,8 @@ namespace ConsoleApp1YTRecap
             Console.WriteLine("  5 - EP.5  VideoEncoderDelegates");
             Console.WriteLine("  6 - EP.6  Interfaces (IAttackable and TryInterFace)");
             Console.WriteLine("  7 - EP.7  Generics (GenericInventory Inventory<T> and TryGenerics)");
-            Console.Write("\nEnter 1, 2, 3, 4, 5, 6, 7: or Q to quit");
+            Console.WriteLine("  8 - EP.8  Loops (for, foreach, while, do-while");
+            Console.Write("\nEnter 1, 2, 3, 4, 5, 6, 7, 8: or Q to quit");
 
             string choice = Console.ReadLine();
             Console.WriteLine();
@@ -46,12 +47,13 @@ namespace ConsoleApp1YTRecap
                 case "5": VideoEncoder.Run(); break;
                 case "6": TryInterface.Run(); break;
                 case "7": TryGenerics.Run(); break;
-                case "Q":
+                case "8": Loops.Run(); break;
+                    case "Q":
                     running = false;
                     Console.WriteLine("Exiting the program. Goodbye!");
                     continue;
                 default:
-                    Console.WriteLine("Invalid choice. Restart and enter 1-6 or Q to quit.");
+                    Console.WriteLine("Invalid choice. Restart and enter 1-8 or Q to quit.");
                     break;
             }
             if (running)
