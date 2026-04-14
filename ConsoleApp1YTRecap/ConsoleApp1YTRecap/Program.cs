@@ -14,6 +14,7 @@ using ConsoleApp1YTRecap.Events;
 using ConsoleApp1YTRecap.Generics;
 using ConsoleApp1YTRecap.Interfaces;
 using ConsoleApp1YTRecap.Videos;
+using ConsoleApp1YTRecap.Intermediate;
 namespace ConsoleApp1YTRecap
 {
     class Program
@@ -34,9 +35,14 @@ namespace ConsoleApp1YTRecap
             Console.WriteLine("  7 - EP.7  Generics (GenericInventory Inventory<T> and TryGenerics)");
             Console.WriteLine("  8 - EP.8  Loops (for, foreach, while, do-while");
             Console.WriteLine("  9 - EP.9  Null Reference (nullable types, ?., ??, ??=)");
-            Console.Write("\nEnter 1, 2, 3, 4, 5, 6, 7, 8, 9: or Q to quit");
+            Console.WriteLine("  10 - EP.10 Refactoring (extract methods, naming, DRY)");
+            Console.WriteLine("  11 - EP.10 Enums (basic, flags, switch, parse)");
+            Console.WriteLine("  12 - EP.10 Properties (auto, full, computed, init-only)");
+            Console.WriteLine("  13 - EP.10 Multi-Dimensional Arrays (rectangular + jagged)");
+            Console.Write("\nEnter 1-13 or Q to quit: ");
 
-            string choice = Console.ReadLine();
+
+                string choice = Console.ReadLine();
             Console.WriteLine();
 
             switch (choice)
@@ -50,7 +56,11 @@ namespace ConsoleApp1YTRecap
                 case "7": TryGenerics.Run(); break;
                 case "8": Loops.Run(); break;
                 case "9": NullReference.Run(); break;
-                    case "Q":
+                case "10": RefactoringDemo.Run(); break;
+                case "11": EnumsDemo.Run(); break;
+                case "12": PropertiesDemo.Run(); break;
+                case "13": MultiDimArraysDemo.Run(); break;
+                case "Q":
                     running = false;
                     Console.WriteLine("Exiting the program. Goodbye!");
                     continue;
