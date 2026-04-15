@@ -47,7 +47,11 @@ namespace ConsoleApp1YTRecap
             Console.WriteLine("  19 - EP.10 Optional Parameters (defaults, named arguments)");
             Console.WriteLine("  20 - EP.10 Value vs Reference Types (stack, heap, copy, ref)");
             Console.WriteLine("  21 - EP.10 Struct (value type, Point, Color, copy semantics)");
-            Console.Write("\nEnter 1-13 or Q to quit: ");
+            Console.WriteLine("  22 - EP.10 Class Intermediate (chaining, static, abstract, sealed)");
+            Console.WriteLine("  23 - EP.10 Interfaces (contract, polymorphism, explicit, default)");
+            Console.WriteLine("  24 - EP.10 is / as / casting (type check, safe cast, patterns)");
+            Console.WriteLine("  25 - EP.10 Switch Pattern Matching (type, property, relational)");
+            Console.Write("\nEnter 1-25 or Q to quit: ");
 
 
                 string choice = Console.ReadLine();
@@ -76,12 +80,15 @@ namespace ConsoleApp1YTRecap
                 case "19": OptionalParametersDemo.Run(); break;
                 case "20": ValueVsReferenceDemo.Run(); break;
                 case "21": StructDemo.Run(); break;
+                case "23": InterfacesIntermediateDemo.Run(); break;
+                case "24": IsAsCastingDemo.Run(); break;
+                case "25": SwitchPatternMatchingDemo.Run(); break;
                 case "Q":
                     running = false;
                     Console.WriteLine("Exiting the program. Goodbye!");
                     continue;
                 default:
-                    Console.WriteLine("Invalid choice. Enter 1-17 or Q to quit.");
+                    Console.WriteLine("Invalid choice. Enter 1-24 or Q to quit.");
                     break;
             }
             if (running)
