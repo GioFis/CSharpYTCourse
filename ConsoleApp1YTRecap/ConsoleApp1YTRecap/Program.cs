@@ -43,7 +43,11 @@ namespace ConsoleApp1YTRecap
             Console.WriteLine("  15 - EP.10 Recursion (factorial, fibonacci, folder tree)");
             Console.WriteLine("  16 - EP.10 Dictionary (CRUD, TryGetValue, frequency, grouping)");
             Console.WriteLine("  17 - EP.10 Other Collections (HashSet, Stack, Queue, LinkedList)");
-                Console.Write("\nEnter 1-13 or Q to quit: ");
+            Console.WriteLine("  18 - EP.10 Params (variable argument count, params keyword)");
+            Console.WriteLine("  19 - EP.10 Optional Parameters (defaults, named arguments)");
+            Console.WriteLine("  20 - EP.10 Value vs Reference Types (stack, heap, copy, ref)");
+            Console.WriteLine("  21 - EP.10 Struct (value type, Point, Color, copy semantics)");
+            Console.Write("\nEnter 1-13 or Q to quit: ");
 
 
                 string choice = Console.ReadLine();
@@ -68,6 +72,10 @@ namespace ConsoleApp1YTRecap
                 case "15": RecursionDemo.Run(); break;
                 case "16": DictionaryDemo.Run(); break;
                 case "17": OtherCollectionsDemo.Run(); break;
+                case "18": ParamsDemo.Run(); break;
+                case "19": OptionalParametersDemo.Run(); break;
+                case "20": ValueVsReferenceDemo.Run(); break;
+                case "21": StructDemo.Run(); break;
                 case "Q":
                     running = false;
                     Console.WriteLine("Exiting the program. Goodbye!");
