@@ -39,7 +39,11 @@ namespace ConsoleApp1YTRecap
             Console.WriteLine("  11 - EP.10 Enums (basic, flags, switch, parse)");
             Console.WriteLine("  12 - EP.10 Properties (auto, full, computed, init-only)");
             Console.WriteLine("  13 - EP.10 Multi-Dimensional Arrays (rectangular + jagged)");
-            Console.Write("\nEnter 1-13 or Q to quit: ");
+            Console.WriteLine("  14 - EP.10 Nested Loops (grids, patterns, combinations)");
+            Console.WriteLine("  15 - EP.10 Recursion (factorial, fibonacci, folder tree)");
+            Console.WriteLine("  16 - EP.10 Dictionary (CRUD, TryGetValue, frequency, grouping)");
+            Console.WriteLine("  17 - EP.10 Other Collections (HashSet, Stack, Queue, LinkedList)");
+                Console.Write("\nEnter 1-13 or Q to quit: ");
 
 
                 string choice = Console.ReadLine();
@@ -60,12 +64,16 @@ namespace ConsoleApp1YTRecap
                 case "11": EnumsDemo.Run(); break;
                 case "12": PropertiesDemo.Run(); break;
                 case "13": MultiDimArraysDemo.Run(); break;
+                case "14": NestedLoopsDemo.Run(); break;
+                case "15": RecursionDemo.Run(); break;
+                case "16": DictionaryDemo.Run(); break;
+                case "17": OtherCollectionsDemo.Run(); break;
                 case "Q":
                     running = false;
                     Console.WriteLine("Exiting the program. Goodbye!");
                     continue;
                 default:
-                    Console.WriteLine("Invalid choice. Restart and enter 1-9 or Q to quit.");
+                    Console.WriteLine("Invalid choice. Enter 1-17 or Q to quit.");
                     break;
             }
             if (running)
