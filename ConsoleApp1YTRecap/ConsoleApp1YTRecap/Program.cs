@@ -51,7 +51,11 @@ namespace ConsoleApp1YTRecap
             Console.WriteLine("  23 - EP.10 Interfaces (contract, polymorphism, explicit, default)");
             Console.WriteLine("  24 - EP.10 is / as / casting (type check, safe cast, patterns)");
             Console.WriteLine("  25 - EP.10 Switch Pattern Matching (type, property, relational)");
-            Console.Write("\nEnter 1-25 or Q to quit: ");
+            Console.WriteLine("  26 - EP.10 IEnumerable (yield, lazy, custom iterator, LINQ)");
+            Console.WriteLine("  27 - EP.10 Namespaces (using, alias, conflict, conventions)");
+            Console.WriteLine("  28 - EP.10 Singleton Pattern (4 implementations, GameManager)");
+            Console.WriteLine("  29 - EP.10 Design Patterns (Observer, Strategy, Factory, Command)");
+            Console.Write("\nEnter 1-29 or Q to quit: ");
 
 
                 string choice = Console.ReadLine();
@@ -83,6 +87,10 @@ namespace ConsoleApp1YTRecap
                 case "23": InterfacesIntermediateDemo.Run(); break;
                 case "24": IsAsCastingDemo.Run(); break;
                 case "25": SwitchPatternMatchingDemo.Run(); break;
+                case "26": IEnumerableDemo.Run(); break;
+                case "27": NamespacesDemo.Run(); break;
+                case "28": SingletonDemo.Run(); break;
+                case "29": DesignPatternsDemo.Run(); break;
                 case "Q":
                     running = false;
                     Console.WriteLine("Exiting the program. Goodbye!");
